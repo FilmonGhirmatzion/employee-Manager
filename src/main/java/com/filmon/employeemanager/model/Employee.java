@@ -1,8 +1,11 @@
 package com.filmon.employeemanager.model;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,27 +16,23 @@ import lombok.Data;
 @Entity
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Employee {
+public class Employee implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
     private Long id;
 
-    private String employeeId;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
-    private String phoneNumber;
-    private String dateOfBirth;  // You can use LocalDate for better date handling
+    private String jobTitle;
+    private String phone;
+    private String imageUrl;
     private String address;
     private String gender;
+    @Column(nullable = false, updatable = false)
+    private String employeCode;
 
-    // Employment Details
-    private String jobTitle;
-    private String department;
-    private String manager;
-    private String hireDate;  // Use LocalDate for better date handling
-    private String employmentType;
-    private String workLocation;
+ 
 
 }
