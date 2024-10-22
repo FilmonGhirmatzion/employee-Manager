@@ -1,4 +1,4 @@
-https://bootdey.com/snippets/view/bs4-contact-cards#preview
+https://bootdey.com/snippets/view/bs4-contact-cards
 
 
 CREATE TABLE employeemanager (
