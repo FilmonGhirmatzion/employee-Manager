@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+<!-- 	<springProperty scope="context" name="springAppName" source="spring.application.name"/> -->
+<!-- 	<springProperty scope="context" name="springProfile" source="spring.profiles.active"/> -->
+
+	<appender name="consoleDefaultAppender"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<Appender name="splunkAppender" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+        <url>https://10.24.106.68:8080</url>
+<!--         <source>${springAppName}-${springProfile}</source> -->
+		<source>employee-manager</source>
+        <token>${SPLUNK_TOKEN}</token>
+        <disableCertificateValidation>true</disableCertificateValidation>
+        <sourcetype>json</sourcetype>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%msg</pattern>
+        </layout>
+    </Appender>    
+
+	<logger name="org.springframework" level="info" />
+
+	<logger name="com.filmon" level="debug"
+		additivity="false">
+		<appender-ref ref="splunkAppender" />
+	</logger>
+	
+	<logger name="com.filmon" level="trace"
+		additivity="false">
+		<appender-ref ref="consoleDefaultAppender" />
+	</logger>
+
+	<logger name="org.hibernate.SQL" level="debug"
+		additivity="false">
+		<appender-ref ref="consoleDefaultAppender" />
+	</logger>
+
+	<root level="info">
+		<appender-ref ref="consoleDefaultAppender" />
+	</root>
+
+</configuration>

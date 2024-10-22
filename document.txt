@@ -1,0 +1,33 @@
+https://bootdey.com/snippets/view/bs4-contact-cards#preview
+
+
+CREATE TABLE employeemanager (
+    name VARCHAR(255),
+    email VARCHAR(255),
+    jobTitle VARCHAR(255),
+    phone VARCHAR(255),
+    imageUrl VARCHAR(255),
+    address VARCHAR(255),
+    gender VARCHAR(50),
+    employeCode VARCHAR(255) NOT NULL UNIQUE
+   
+);
+
+SELECT * FROM employeemanager;
+
+
+INSERT INTO employeemanager (name, email, jobTitle, phone, imageUrl, address, gender, employeCode)
+VALUES
+('John Doe', 'john.doe@example.com', 'Software Engineer', '123-456-7890', 'https://example.com/john.jpg', '1234 Elm St, Springfield, IL', 'Male', 'EMP001'),
+('Jane Smith', 'jane.smith@example.com', 'Project Manager', '234-567-8901', 'https://example.com/jane.jpg', '5678 Oak St, Metropolis, NY', 'Female', 'EMP002'),
+('Alice Johnson', 'alice.johnson@example.com', 'HR Specialist', '345-678-9012', 'https://example.com/alice.jpg', '9101 Maple Ave, Gotham, NJ', 'Female', 'EMP003'),
+('Robert Brown', 'robert.brown@example.com', 'DevOps Engineer', '456-789-0123', 'https://example.com/robert.jpg', '1213 Pine Rd, Star City, CA', 'Male', 'EMP004'),
+('Emily Davis', 'emily.davis@example.com', 'Marketing Manager', '567-890-1234', 'https://example.com/emily.jpg', '1415 Cedar Blvd, Central City, TX', 'Female', 'EMP005'),
+('Michael Wilson', 'michael.wilson@example.com', 'Sales Executive', '678-901-2345', 'https://example.com/michael.jpg', '1617 Birch Ave, Keystone, WA', 'Male', 'EMP006'),
+('Sarah Miller', 'sarah.miller@example.com', 'Data Analyst', '789-012-3456', 'https://example.com/sarah.jpg', '1819 Willow St, Fawcett City, FL', 'Female', 'EMP007'),
+('David Anderson', 'david.anderson@example.com', 'Product Designer', '890-123-4567', 'https://example.com/david.jpg', '2021 Redwood Dr, Coast City, MA', 'Male', 'EMP008');
+
+INSERT INTO employeemanager (name, email, jobtitle, phone, imageurl, address, gender, employecode) VALUES ('', '', '', '', '', '', '', '');
+
+SELECT name, email, jobtitle, phone, imageurl, address, gender, employecode FROM employeemanager;
+
