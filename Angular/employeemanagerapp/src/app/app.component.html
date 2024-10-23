@@ -1,20 +1,20 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-xl-3">
+        <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
             <div class="card m-b-30">
                 <div class="card-body row">
                     <div class="col-6">
-                        <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="img-fluid rounded-circle w-60"></a>
+                        <a href=""><img src="{{employee?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
                     </div>
                     <div class="col-6 card-title align-self-center mb-0">
-                        <h5>Emma A. Main</h5>
-                        <p class="m-0">Graphics Designer</p>
+                        <h5>{{employee?.name}}</h5>
+                        <p class="m-0">{{employee?.jobTitle}}</p>
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">PaulGoyette@gmail.com</a></li>
-                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
+                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>{{employee?.email}}</li>
+                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>{{employee?.phone}}</li>
                 </ul>
                 <div class="card-body">
                     <div class="float-right btn-group btn-group-sm">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-xl-3">
+        <!-- <div class="col-md-6 col-xl-3">
             <div class="card m-b-30">
                 <div class="card-body row">
                     <div class="col-6">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">PaulGoyette@gmail.com</a></li>
+                  <li><i class="float-right"></i>Email : <a href="#">PaulGoyette&#64;gmail.com</a></li>
                     <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
                 </ul>
                 <div class="card-body">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">PaulGoyette@gmail.com</a></li>
+                  <li><i class="float-right"></i>Email : <a href="#">PaulGoyette&#64;gmail.com</a></li>
                     <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
                 </ul>
                 <div class="card-body">
@@ -83,8 +83,8 @@
                         <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
                     </ul>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div>
         <div class="col-md-6 col-xl-3">
             <div class="card m-b-30">
                 <div class="card-body row">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">PaulGoyette@gmail.com</a></li>
+                  <li><i class="float-right"></i>Email : <a href="#">PaulGoyette&#64;gmail.com</a></li>
                     <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
                 </ul>
                 <div class="card-body">
@@ -112,6 +112,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
