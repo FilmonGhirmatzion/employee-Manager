@@ -16,8 +16,8 @@ export class EmployeeService {
     return this.http.get<Employee[]>(`${this.apiServerUrl}/employee/list`);
   }
 
-  public addEmployees(employee: Employee): Observable<Employee[]> {
-    return this.http.post<Employee[]>(`${this.apiServerUrl}/employee/add`, employee);
+  public addEmployee(employee: Employee): Observable<Employee[]> {
+    return this.http.post<Employee[]>(`${this.apiServerUrl}/employee/create`, employee);
   }
   public deleteEmployee(employeeId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/employee/delete/${employeeId}`);
